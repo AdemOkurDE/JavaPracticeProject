@@ -45,30 +45,36 @@ public class Q2_MuratBey {
         ArrayList<String> sesliHarfler = new ArrayList<>(Arrays.asList("a", "e", "i", "o", "u"));
         ArrayList<String> sessizHarfler = new ArrayList<>(Arrays.asList("b", "c", "d", "f", "g", "h", "j", "k", "l", "m", "n", "p", "q", "r", "s", "t" , "v" , "w" , "y" , "z")); //q,v,w, harfleri eklendi
 
-        if ( kullaniciHarfGirisi.length() == 1  ) {
-            for (int i = 0; i < sessizHarfler.size(); i++) {
-                if (sessizHarfler.get(i).equals(harfIgnore)) {
-                    System.out.println(kullaniciHarfGirisi + " harfi sessiz harftir.");
-                    karakterBulunamadi=false;
-                    break;
+        if ( kullaniciHarfGirisi.length() == 1 ) {
+            char harf=(char) kullaniciHarfGirisi.charAt(0);
+            //System.out.println(harf);
+            //System.out.println(Character.isAlphabetic(harf));
+
+                for (int i = 0; i < sessizHarfler.size(); i++) {
+                    if (sessizHarfler.get(i).equals(harfIgnore)) {
+                        System.out.println("\""+kullaniciHarfGirisi +"\""+ " harfi sessiz harftir.");
+                        karakterBulunamadi = false;
+                        break;
+                    }
                 }
-            }
-            for (int i = 0; i <sesliHarfler.size() ; i++) {
-                if (sesliHarfler.get(i).equals(harfIgnore)) {
-                    System.out.println(kullaniciHarfGirisi + " harfi sesli harfdir.");
-                    karakterBulunamadi=false;
-                    break;
+                for (int i = 0; i < sesliHarfler.size(); i++) {
+                    if (sesliHarfler.get(i).equals(harfIgnore)) {
+                        System.out.println("\""+kullaniciHarfGirisi +"\""+ " harfi sesli harfdir.");
+                        karakterBulunamadi = false;
+                        break;
+                    }
                 }
-            }
 
-            if (karakterBulunamadi){ // tek karakter girildi ancak karakter iki listede de bulunamadi.
-                // Nested if ile "Yanlis karakter" mesaji verilecek!
+                if (karakterBulunamadi) { // tek karakter girildi ancak karakter iki listede de bulunamadi.
+                    // Nested if ile "Yanlis karakter" mesaji verilecek!
+                    // Burada Wrapper Classes dan [[ Character.isAlphabetic() // true-false  ]] * ozelligi de kullanilabilir belki!?
 
-                System.out.println("Yanlis karakter girdiniz! Tekrar girin!");
-                sesliSessizBelirtme();
-            }
+                    System.out.println("Yanlis karakter girdiniz! Tekrar girin!");
+                    sesliSessizBelirtme();
+                }
 
-        } else {        // ilk if sonucu false ise birden fazla karakter girildi mesaji verilecek!
+
+            } else {        // ilk if sonucu false ise birden fazla karakter girildi mesaji verilecek!
 
             System.out.println("Fazla karakter girdiniz! Tekrar girin!");
             sesliSessizBelirtme();
