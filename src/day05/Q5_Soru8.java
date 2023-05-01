@@ -67,7 +67,7 @@ public class Q5_Soru8 {
             System.out.println("Kredi Kart No : "+"**** **** **** " + kartNo.substring(12));
         }
 
-
+        //ChatGPT :
         // Kullanıcıdan ad, soyad ve kredi kartı numarasını alın
         System.out.print("Adınızı girin: ");
         String name = scanner.next();
