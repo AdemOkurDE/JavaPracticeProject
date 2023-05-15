@@ -4,7 +4,8 @@ import java.util.Scanner;
 
 public class Anamenu {
     Scanner scan = new Scanner(System.in);
-    OgrenciIslemleri ogrenciIslemleri;
+    OgrenciIslemleri ogrenciIslemleri=new OgrenciIslemleri();
+    OgretmenIslemleri ogretmenIslemleri=new OgretmenIslemleri();
     void menu() {
         System.out.println("====================================\n" +
                 "\t ÖĞRENCİ VE ÖĞRETMEN YÖNETİM PANELİ\n" +
@@ -16,12 +17,18 @@ public class Anamenu {
         char secim = scan.next().toUpperCase().charAt(0);
         switch (secim) {
             case '1': {
-                ogrenciIslemleri=new OgrenciIslemleri();
                 ogrenciIslemleri.ogrenciMenu();
             }
             case '2': {
+                ogretmenIslemleri.ogretmenMenu();
             }
             case 'Q': {
+                System.out.println("GÜLE GÜLE");
+                System.exit(0);
+            }
+            default:{
+                System.out.println("HATALI GİRİŞ YAPTINIZ...");
+                menu();
             }
         }
     }

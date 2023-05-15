@@ -20,7 +20,7 @@ public class Kisi {
         this.yas = yas;
     }
 
-    public String getAd() {
+    /*public String getAd() {
         return ad;
     }
 
@@ -34,13 +34,13 @@ public class Kisi {
 
     public void setSad(String sad) {
         this.sad = sad;
-    }
+    }*/
 
     public String getTcNo() {
         return tcNo;
     }
 
-    public void setTcNo(String tcNo) {
+    /*public void setTcNo(String tcNo) {
         this.tcNo = tcNo;
     }
 
@@ -50,7 +50,7 @@ public class Kisi {
 
     public void setYas(int yas) {
         this.yas = yas;
-    }
+    }*/
 
     @Override
     public String toString() {

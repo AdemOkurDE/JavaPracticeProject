@@ -12,7 +12,6 @@ public class C0417_YusufBey {
             * cift sayilari toplayan
             * tek sayilari cikaran
             * 0 girilince toplami ekrana yazdirin
-
          */
 
         Scanner scanner =new Scanner(System.in);
